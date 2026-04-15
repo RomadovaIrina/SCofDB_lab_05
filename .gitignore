@@ -1,0 +1,11 @@
+\__pycache__
+
+sql/00_schema.sql
+sql/01_seed_100k.sql
+sql/02_explain_before.sql
+sql/03_indexes.sql
+sql/04_explain_after_indexes.sql
+sql/05_partition_orders.sql
+sql/06_explain_after_partition.sql
+
+
