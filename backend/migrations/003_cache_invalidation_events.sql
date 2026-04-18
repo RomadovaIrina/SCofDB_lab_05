@@ -10,20 +10,23 @@
 --    или напрямую инвалидировать cache keys.
 
 -- Пример каркаса:
+
+-- Включаем расширение UUID
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 --
--- CREATE TABLE cache_invalidation_events (
---     id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
---     event_type VARCHAR(64) NOT NULL,         -- например ORDER_UPDATED
---     entity_type VARCHAR(64) NOT NULL,        -- ORDER
---     entity_id UUID NOT NULL,
---     payload JSONB NOT NULL DEFAULT '{}'::jsonb,
---     processed BOOLEAN NOT NULL DEFAULT FALSE,
---     created_at TIMESTAMP NOT NULL DEFAULT NOW(),
---     processed_at TIMESTAMP
--- );
---
--- CREATE INDEX idx_cache_events_unprocessed
---   ON cache_invalidation_events (processed, created_at);
+CREATE TABLE cache_invalidation_events (
+    id UUID PRIMARY KEY DEFAULT uuid_generate_v4(),
+    event_type VARCHAR(64) NOT NULL,         -- например ORDER_UPDATED
+    entity_type VARCHAR(64) NOT NULL,        -- ORDER
+    entity_id UUID NOT NULL,
+    payload JSONB NOT NULL DEFAULT '{}'::jsonb,
+    processed BOOLEAN NOT NULL DEFAULT FALSE,
+    created_at TIMESTAMP NOT NULL DEFAULT NOW(),
+    processed_at TIMESTAMP
+);
+
+CREATE INDEX idx_cache_events_unprocessed
+  ON cache_invalidation_events (processed, created_at);
 
 -- TODO:
 -- Опишите в отчёте выбранный вариант:
