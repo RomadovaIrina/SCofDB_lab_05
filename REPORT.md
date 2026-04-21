@@ -138,6 +138,9 @@ _TODO: Приведите метрики wrk/locust._
 | /api/cache-demo/catalog | 352.59 | 312.94 ms | 879.55 | 113.61 ms| 
 | /api/cache-demo/orders/ | 187.37 | 236.19 ms | 866.35 | 115.91 ms |
 
+`/api/cache-demo/catalog` Изменение: +163.20% по RPS, -64.87% по latency
+`/api/cache-demo/orders/` Изменение: +365.53% по RPS, -56.81% по latency
+
 ## 6. Выводы
 _TODO: Сформулируйте 3–5 практических выводов._
 
