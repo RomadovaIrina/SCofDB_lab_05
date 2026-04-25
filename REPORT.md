@@ -133,7 +133,7 @@ _TODO: Приведите метрики wrk/locust._
 - С кэшем: RPS ..., p95 latency ...
 - Изменение: +...%
 
-|Endpoint|RPS (без кеша)|Latency (без кеша)|RPS (кеш)|Latency (кеш)|
+|Endpoint|RPS (no cache)|Latency (no cache)|RPS (cache)|Latency (cache)|
 |---|---|---|---|---|
 | /api/cache-demo/catalog | 352.59 | 312.94 ms | 879.55 | 113.61 ms| 
 | /api/cache-demo/orders/ | 187.37 | 236.19 ms | 866.35 | 115.91 ms |
